@@ -1,0 +1,17 @@
+body {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 22px;
+  line-weight: bold;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 60px;
+  line-weight: 60px;
+}
+
+.main-menu {
+  font-size: 16px;
+  line-weight: 18px;
+}
