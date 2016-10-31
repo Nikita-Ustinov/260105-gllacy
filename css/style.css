@@ -20,7 +20,6 @@ body {
 
 .main_container {
   width: 860px;
-  /*max-width: 1200px;*/
   margin: 0 auto;
   padding: 0 20px;
   background-color: rgba(0,0,255, 0.1);
@@ -69,7 +68,8 @@ header p {
   float: right;
   width: 170px;
 }
-/*// может картинку лечше сделать background-image ? чтобы можно было наложить сверху остальные блоки?*/
+
+ /* REVIEW  может картинку сделать background-image, чтобы было проще другие элементы положить сверху?*/
 .double_ice-cream {
   margin: 0 auto;
   width: 652px;
@@ -89,7 +89,7 @@ h1 {
   display: none;
 }
 
-.background_slider ul {
+.background_slider {
   margin: 0;
   padding: 0;
       /*// почему маргины сверху и снизу остались?*/
@@ -144,9 +144,8 @@ h1 {
   margin-bottom: 40px;
 }
 
-.item_card:last-child {
+.item_card article:last-child {
   margin-right: 0;
-    /*//почему это правило не работает?*/
 }
 
 .advantages {
@@ -158,28 +157,34 @@ h1 {
   padding-top: 10px;
   margin-bottom: 40px;
 }
-
 .advantages div {
   width:400px;
   min-height: 115px;
   background-color: rgba(0,200,0, 0.4);
 }
+ /*REVIEW почему эти элементы не прижимаются влево и вправо? 1_advantage 3_advantage 4_advantage 2_advantage*/
 
 .1_advantage {
   float: left;
-
 }
 
 .3_advantage {
   float: right;
 }
 
+.4_advantage {
+  float: left;
+}
+
+.2_advantage {
+  float: right;
+}
+      /*REVIEW  -----------------------------------как этот элемент на карту поставть? connect_us*/
 .connect_us {
   float: right;
   width: 300px;
   min-height: 300px;
   background-color: rgba(0,200,0, 0.3);
-  /*как этот элемент на карту поставть?*/
 }
 
 .map {
@@ -192,7 +197,7 @@ footer {
   padding: 20px;
   background-color: rgba(0,0,255, 0.3);
   min-width: 860px;
-  min-hight: 100px;
+  min-height: 100px;
 }
 
 .social {
@@ -209,7 +214,7 @@ footer {
 }
 
 .manufacturer {
-  min-hight: 60px;
+  min-height: 60px;
   width: 200px;
   float: right;
 }
