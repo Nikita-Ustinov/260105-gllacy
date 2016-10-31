@@ -2,16 +2,219 @@ body {
   font-family: "Roboto";
   font-size: 18px;
   line-height: 22px;
-  line-weight: bold;
+  font-weight: bold;
   color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.main_container {
+  width: 860px;
+  /*max-width: 1200px;*/
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: rgba(0,0,255, 0.1);
+}
+
+header {
+  padding: 10px 20px;
+  min-height: 115px;
+  background-color: rgba(0,0,255, 0.3);
+}
+
+.logo {
+  clear: both;
+  float: left;
+  margin-right: 30px;
+}
+
+.main_menu {
+  width: 350px;
+  margin: 0 auto;
+  float: left;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.main_menu ul {
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+  background-color: rgba(0,0,255, 0.4);
+}
+
+.main_menu li {
+  display: inline-block;
+  margin-right: 27px;
+}
+
+.right_side {
+  float: right;
+  width: 270px;
+  background-color: rgba(0,0,255, 0.4);
+  margin-top: 30px;
+}
+
+header p {
+  float: right;
+       /*//как сделать так, чтобы этот элемент опустился под кнопки правой стороны (предыдущего селектора)*/
+  width: 170px;
+}
+/*// может картинку лечше сделать background-image ? чтобы можно было наложить сверху остальные блоки?*/
+.double_ice-cream {
+  margin: 0 auto;
+  width: 652px;
+  height: 565px;
 }
 
 h1 {
   font-size: 60px;
-  line-weight: 60px;
+  line-height: 60px;
+  margin: 0 auto 40px;
+  color: black;
+  width: 666px;
+  text-align: center;
 }
 
-.main-menu {
-  font-size: 16px;
-  line-weight: 18px;
+.catalog_sub {
+  display: none;
+}
+
+.background_slider ul {
+  margin: 0;
+  padding: 0;
+      /*// почему маргины сверху и снизу остались?*/
+}
+
+.background_slider li {
+  display: inline-block;
+  margin-right: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.b_give_me_two {
+  width: 285px;
+  background-color: rgba(0,0,255, 0.4);
+  min-height: 65px;
+  margin: 0 auto;
+  clear: both;
+  margin-bottom: 40px;
+}
+
+.container {
+  background-color: rgba(0,0,255, 0.3);
+}
+
+.banner {
+  width: 420px;
+  min-height: 230px;
+  background-color: rgba(0,255,0, 0.3);
+  margin-bottom: 25px;
+}
+
+.banner_left {
+  float: left;
+}
+
+.banner_right {
+  float: right;
+}
+
+.item_card article {
+  width: 200px;
+  min-height: 135 px;
+  background-color: rgba(0,200,0, 0.3);
+  float: left;
+  margin-right: 20px;
+}
+
+.item_card {
+  margin-bottom: 40px;
+}
+
+.item_card:last-child {
+  margin-right: 0;
+    /*//почему это правило не работает?*/
+}
+
+.advantages {
+  min-height: 353px;
+  min-width: 820px;
+  background-color: rgba(0,200,0, 0.3);
+  clear: both;
+  padding: 20px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+
+.advantages div {
+  width:400px;
+  min-height: 115px;
+  background-color: rgba(0,200,0, 0.4);
+}
+
+.1_advantage {
+  float: left;
+
+}
+
+.3_advantage {
+  float: right;
+}
+
+.connect_us {
+  float: right;
+  width: 300px;
+  min-height: 300px;
+  background-color: rgba(0,200,0, 0.3);
+}
+
+.map {
+  width: 900px;
+  margin: 0 -20px;
+}
+
+footer {
+  margin-left: -20px;
+  padding: 20px;
+  background-color: rgba(0,0,255, 0.3);
+  min-width: 860px;
+  min-hight: 100px;
+}
+
+.social {
+  width: 200px;
+  margin-right:20px;
+  float: left;
+}
+
+.center_footer {
+  width: 420px;
+  min-height: 40px;
+  background-color: rgba(0,0,255, 0.4);
+  float: left;
+}
+
+.manufacturer {
+  min-hight: 60px;
+  width: 200px;
+  float: right;
+}
+
+.manufacturer p {
+  font-size: 12px;
+  line-height: 18px;
 }
