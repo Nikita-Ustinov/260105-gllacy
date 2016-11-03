@@ -6,167 +6,168 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <a href="index.html"> <img src="img/Logo.png" class="logo" alt="logo" width="157" height="69"> </a>
-      <nav class="main_menu">
-        <ul>
-          <li>Каталог</li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">О компании</a></li>
-        </ul>
-      </nav>
-      <div class="right_side">
-        <button class="search" type="button" name="Поиск"></button>
-        <input type="search" class="hidden">
-        <a href="#" class="enter">
-          <img src="#"  class="img_enter" alt="->" width="18" height="16">
-          Выход
-        </a>
-        <form class="hidden enter_form">
-          <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
-          <input type="password" name="password" placeholder="Пароль">
-          <button type="submit" name="enter">Выход</button>
-          <a href="#">Забыли пароль</a>
-          <a href="#">Новая регистрация</a>
-        </form>
+    <div class="main_container">
+      <header class="clearfix">
+        <a href="index.html"> <img src="img/Logo.png" class="logo" alt="logo" width="157" height="69"> </a>
+        <nav class="main_menu">
+          <ul>
+            <li>Каталог</li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">О компании</a></li>
+          </ul>
+        </nav>
+        <div class="right_side">
+          <button class="search" type="button" name="Поиск"></button>
+          <input type="search" class="hidden">
+          <a href="#" class="enter">
+            <img src="#"  class="img_enter" alt="->" width="18" height="16">
+            Выход
+          </a>
+          <form class="hidden enter_form">
+            <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
+            <input type="password" name="password" placeholder="Пароль">
+            <button type="submit" name="enter">Выход</button>
+            <a href="#">Забыли пароль</a>
+            <a href="#">Новая регистрация</a>
+          </form>
 
-        <a href="#" class="basket">
-          <img src="#"  class="img_basket" alt="->" width="18" height="16">
-          Пусто
-        </a>
-      </div>
-      <p>С 10 до 20, ежедневно 8 812 450-25-25</p>
-    </header>
-    <main>
-      <nav class="sub_menu">
-        <ul>
-          <li><a href="/index.html">Главная</a></li>
-          <li><a href="#">Каталог</a></li>
-          <li>Сливочное</li>
-        </ul>
-      </nav>
-      <h1>Сливочное мороженое</h1>
-      <section class="filter">
-        <form>
-          <label for="sort">Сортировка</label>
-          <select id="sort">
-            <option id="popularity">По популярности</option>
-            <option id="f_cheep">Сначала недорогие</option>
-            <option id="f_expensive">Сначала дорогие</option>
-            <option id="fatty">по жирности</option>
-          </select>
-          <div class="price"></div>
-          <span class="for_fat_choose">Жирность</span>
-          <div class="fat_choose">
-          <input type="radio" name="fat" id="zero"><label for="zero">0%</label>
-          <input type="radio" name="fat" id="ten"><label for="ten">10%</label>
-          <input type="radio" name="fat" id="thirty"><label for="thirty">30%</label>
-          <input type="radio" name="fat" id="thirty_up"><label for="thirty_up">выше 30%</label>
-          </div>
-          <span class="for_inner">Наполнители</span>
-          <div class="inner">
-            <input type="checkbox" id="ch_1"><label for="ch_1"></label>
-            <input type="checkbox" id="ch_2"><label for="ch_2"></label>
-            <input type="checkbox" id="ch_3"><label for="ch_3"></label>
-            <input type="checkbox" id="ch_4"><label for="ch_4"></label>
-            <input type="checkbox" id="ch_5"><label for="ch_5"></label>
-          </div>
-          <button type="submit">Показать</button>
-        </form>
-      </section>
-      <section class="choose_item">
-        <article class="item_card">
-          <img src="img/1.png" width="267" height="267" alt="1">
-          <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/2.png" width="267" height="267" alt="2">
-          <p>Сливочно-кофейное с кусочками шоколада</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/3.png" width="267" height="267" alt="3">
-          <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/4.png" width="267" height="267" alt="4">
-          <p>Сливочное крем-брюле с карамельной подливкой</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/5.png" width="267" height="267" alt="5">
-          <p>Сливочное с брусничным джемом
-</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/6.png" width="267" height="267" alt="6">
-          <p>Сливочно-черничное с цельными ягодами черники </p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/7.png" width="267" height="267" alt="7">
-          <p>Сливочно-лимонное с карамельной присыпкой</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/8.png" width="267" height="267" alt="8">
-          <p>Сливочное с шоколадной стружкой</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/9.png" width="267" height="267" alt="9">
-          <p>Сливочно-ванильное с кусочками шоколада</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/10.png" width="267" height="267" alt="10">
-          <p>Сливочноe с ментоловым сиропом</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/11.png" width="267" height="267" alt="11">
-          <p>Сливочное с кусочками черного шоколада</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-        <article class="item_card">
-          <img src="img/12.png" width="267" height="267" alt="12">
-          <p>Сливочное с мятным сиропом</p>
-          <a href="#" class="hidden">Быстрый просмотр</a>
-        </article>
-      </section>
-      <nav class="page_nav">
-        <ul>
-          <li><img src="#" class="priv" alt="<"  width="9" height="14"></li>
-          <li>1</li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#" class="next_page"><img src="#" class="next" alt=">"  width="9" height="14"></a></li>
-        </ul>
-      </nav>
-    </main>
-    <footer>
-      <section class="social">
-        <a href="#" class="tw">Твиттер</a>
-        <a href="#" class="inst">Инстаграм</a>
-        <a href="#" class="fb">Фейсбук</a>
-        <a href="#" class="vk">Вконтакте</a>
-      </section>
-      <div class="center_footer">
-        <img src="#" alt="heart" width="16" height="13">
-        <a href="#">Для поставщиков</a>
-        <a href="#">О производстве</a>
-        <a href="#">Наши документы</a>
-        <a href="#">Экологические стандарты</a>
-      </div>
-      <section class="manufacturer">
-        <img src="#" alt="HTML Academy" width="108" height="38">
-        <p>Сделано в <a href="#">HTML Academy</a> © 2016</p>
-      </section>
-    </footer>
+          <a href="#" class="basket">
+            <img src="#"  class="img_basket" alt="->" width="18" height="16">
+            Пусто
+          </a>
+          <p>С 10 до 20, ежедневно 8 812 450-25-25</p>
+        </div>
+      </header>
+      <main>
+        <nav class="sub_menu">
+          <ul>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li>Сливочное</li>
+          </ul>
+        </nav>
+        <h1 class="catalog">Сливочное мороженое</h1>
+        <section class="filter">
+          <form>
+            <label for="sort">Сортировка</label>
+            <select id="sort">
+              <option id="popularity">По популярности</option>
+              <option id="f_cheep">Сначала недорогие</option>
+              <option id="f_expensive">Сначала дорогие</option>
+              <option id="fatty">по жирности</option>
+            </select>
+            <div class="price"></div>
+            <span class="for_fat_choose">Жирность</span>
+            <div class="fat_choose">
+            <input type="radio" name="fat" id="zero"><label for="zero">0%</label>
+            <input type="radio" name="fat" id="ten"><label for="ten">10%</label>
+            <input type="radio" name="fat" id="thirty"><label for="thirty">30%</label>
+            <input type="radio" name="fat" id="thirty_up"><label for="thirty_up">выше 30%</label>
+            </div>
+            <span class="for_inner">Наполнители</span>
+            <div class="inner">
+              <input type="checkbox" id="ch_1"><label for="ch_1"></label>
+              <input type="checkbox" id="ch_2"><label for="ch_2"></label>
+              <input type="checkbox" id="ch_3"><label for="ch_3"></label>
+              <input type="checkbox" id="ch_4"><label for="ch_4"></label>
+              <input type="checkbox" id="ch_5"><label for="ch_5"></label>
+            </div>
+            <button type="submit">Показать</button>
+          </form>
+        </section>
+        <section class="choose_item">
+          <article class="item_card">
+            <img src="img/1.png" width="267" height="267" alt="1">
+            <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/2.png" width="267" height="267" alt="2">
+            <p>Сливочно-кофейное с кусочками шоколада</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/3.png" width="267" height="267" alt="3">
+            <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/4.png" width="267" height="267" alt="4">
+            <p>Сливочное крем-брюле с карамельной подливкой</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/5.png" width="267" height="267" alt="5">
+            <p>Сливочное с брусничным джемом</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/6.png" width="267" height="267" alt="6">
+            <p>Сливочно-черничное с цельными ягодами черники </p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/7.png" width="267" height="267" alt="7">
+            <p>Сливочно-лимонное с карамельной присыпкой</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/8.png" width="267" height="267" alt="8">
+            <p>Сливочное с шоколадной стружкой</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/9.png" width="267" height="267" alt="9">
+            <p>Сливочно-ванильное с кусочками шоколада</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/10.png" width="267" height="267" alt="10">
+            <p>Сливочноe с ментоловым сиропом</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/11.png" width="267" height="267" alt="11">
+            <p>Сливочное с кусочками черного шоколада</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+          <article class="item_card">
+            <img src="img/12.png" width="267" height="267" alt="12">
+            <p>Сливочное с мятным сиропом</p>
+            <a href="#" class="hidden">Быстрый просмотр</a>
+          </article>
+        </section>
+        <nav class="page_nav">
+          <ul>
+            <li><img src="#" class="priv" alt="<"  width="9" height="14"></li>
+            <li>1</li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#" class="next_page"><img src="#" class="next" alt=">"  width="9" height="14"></a></li>
+          </ul>
+        </nav>
+      </main>
+      <footer class="clearfix">
+        <section class="social">
+          <a href="#"><img src="img/Твитер.png" class="tw" alt="Твиттер"></img></a>
+          <a href="#"><img src="img/Инста.png" class="inst" alt="Инстаграм"></img></a>
+          <a href="#"><img src="img/ФБ.png" class="fb" alt="Фейсбук"></img></a>
+          <a href="#"><img src="img/ВК.png" class="vk" alt="Вконтакте"></img></a>
+        </section>
+        <div class="center_footer">
+          <img src="#" alt="heart" width="16" height="13">
+          <a href="#">Для поставщиков</a>
+          <a href="#">О производстве</a>
+          <a href="#">Наши документы</a>
+          <a href="#">Экологические стандарты</a>
+        </div>
+        <section class="manufacturer">
+          <img src="img/HTMLAcademy_logo.png" alt="HTML Academy" width="108" height="38">
+          <p>Сделано в <a href="#">HTML Academy</a> © 2016</p>
+        </section>
+      </footer>
+    </div>
   </body>
 </html>
