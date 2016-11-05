@@ -27,7 +27,7 @@
         </nav>
         <div class="right_side">
           <button class="search" type="button" name="Поиск"></button>
-          <input type="search" class="hidden">
+          <input class="hidden" type="search" >
           <a href="#" class="enter">
             <img src="#"  class="img_enter" alt="->" width="18" height="16">
             Выход
@@ -46,7 +46,6 @@
           </a>
           <p><span>С 10 до 20, ежедневно</span><br> 8 812 450-25-25</p>
         </div>
-        <!-- <p>С 10 до 20, ежедневно 8 812 450-25-25</p> -->
       </header>
       <main>
         <div class="with_ice-cream">
@@ -63,31 +62,35 @@
           <article class="banner banner_left">
             <h2>Малинка даром!</h2>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a href="#">Хочу варенье!</a>
+            <a href="#" class="btn">Хочу варенье!</a>
           </article>
           <article class="banner banner_right">
             <h2>Шоколадки даром!</h2>
             <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-            <a href="#">Хочу шоколадки!</a>
+            <a href="#" class="btn">Хочу шоколадки!</a>
           </article>
           <div class="item_card clearfix">
             <article>
               <img src="img/1.png" width="200" height="200" alt="1">
+              <span>310 Р/кг</span>
               <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
               <a href="#" class="hidden">Быстрый просмотр</a>
             </article>
             <article>
               <img src="img/2.png" width="200" height="200" alt="1">
+              <span>380 Р/кг</span>
               <p>Сливочно-кофейное с кусочками шоколада</p>
               <a href="#" class="hidden">Быстрый просмотр</a>
             </article>
             <article>
               <img src="img/3.png" width="200" height="200" alt="1">
+              <span>355 Р/кг</span>
               <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
               <a href="#" class="hidden">Быстрый просмотр</a>
             </article>
             <article>
               <img src="img/4.png" width="200" height="200" alt="1">
+              <span>415 Р/кг</span>
               <p>Сливочное крем-брюле с карамельной подливкой</p>
               <a href="#" class="hidden">Быстрый просмотр</a>
             </article>
@@ -124,19 +127,22 @@
                Обещаем не спамить и не слать всякой не нужной ерунды. Честно =) </p>
                <form class="delivery">
                  <input type="email" name="delivery" placeholder="Электронная почта">
-                 <button type="submit" name="delivery">Отправить</button>
+                 <button type="submit" name="delivery" class="btn">Отправить</button>
                </form>
           </article>
         </section>
         <div class="map_block" >
           <aside class="connect_us">
-            <h4>Адрес главного офиса и офлайн магазина:</h4>
-            <p class="address">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
-            <h4>Для заказов по телефону:</h4>
-            <p>8 812 450-25-25 (с 10 до 20 ежедневно)</p>
+            <div class="text_conteiner">
+              <h4>Адрес главного офиса и офлайн магазина:</h4>
+              <p class="address">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
+              <h4>Для заказов по телефону:</h4>
+              <p>8 812 450-25-25 (с 10 до 20 ежедневно)</p>
+            </div>
+            <a href="#">Форма обратной связи</a>
           </aside>
           <section class="map">
-            <img src="#" alt="map" width="900" height="431">
+            <img src="img/map.png" alt="map" width="900" height="430">
           </section>
         </div>
         <form class="hidden feedback">
@@ -155,17 +161,18 @@
           <a href="#"><img src="img/ФБ.png" class="fb" alt="Фейсбук"></img></a>
           <a href="#"><img src="img/ВК.png" class="vk" alt="Вконтакте"></img></a>
         </section>
-        <div class="center_footer">
-          <img src="#" alt="heart" width="16" height="13">
-          <a href="#">Для поставщиков</a>
-          <a href="#">О производстве</a>
-          <a href="#">Наши документы</a>
-          <a href="#">Экологические стандарты</a>
-        </div>
         <section class="manufacturer">
           <img src="img/HTMLAcademy_logo.png" alt="HTML Academy" width="108" height="38">
           <p>Сделано в <a href="#">HTML Academy</a> © 2016</p>
         </section>
+        <div class="center_footer">
+          <img src="img/Сердце.png" alt="Сердце" width="16" height="13">
+          <a href="#">Для поставщиков</a>
+          <a href="#">О производстве</a><br>
+          <a href="#">Наши документы</a>
+          <a href="#">Экологические стандарты</a>
+        </div>
+
       </footer>
     </div>
   </body>

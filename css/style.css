@@ -20,10 +20,10 @@ body {
 }
 
 .main_container {
-  min-width: 860px;
+  width: 860px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: rgba(0,0,255, 0.1);
+  /*background-color: rgba(0,0,255, 0.1);*/
 }
 
 header {
@@ -40,12 +40,13 @@ header {
 }
 
 .main_menu {
-  min-width: 350px;
+  width: 350px;
   margin: 0 auto;
   float: left;
   font-size: 16px;
   line-height: 18px;
 }
+
 
 .main_menu ul {
   margin: 0;
@@ -61,7 +62,7 @@ header {
   vertical-align: top;
 }
 
-.main-menu a {
+.main-menu li  {
   color: inherit;
   /*    ---------------------------------------------   почему белый цвет текста не наследуется?*/
 }
@@ -73,7 +74,33 @@ header {
 .right_side {
   float: right;
   width: 270px;
-  margin-top: 30px;
+  margin-top: 15px;
+}
+
+.right_side a{
+  /*-------------------------------------------------------------как прижать эти кнопки вправо ?   */
+  display: inline-block;
+  height: 32px;
+  background: rgba(157,177,165, 0.2);
+  box-sizing: border-box;
+  padding: 5px 35px 5px 15px;
+  border-radius: 20px;
+}
+
+.right_side .enter{
+  padding-right: 15px;
+}
+
+/*.right_side .basket {
+margin-right: -10px;
+}*/
+
+.right_side .search {
+  width: 32px;
+  height: 32px;
+  background: url("../img/Лупа.png") no-repeat;
+  border-radius: 50%;
+  box-shadow: none;
 }
 
 header p {
@@ -90,31 +117,7 @@ header p span{
   line-height: 16px;
 }
 
-.right_side a{
-  /*-------------------------------------------------------------как прижать эти кнопки вправо ?   */
-  display: inline-block;
-  height: 32px;
-  background: rgba(157,177,165, 0.8);
-  box-sizing: border-box;
-  padding: 5px 35px 5px 15px;
-  border-radius: 20px;
-}
 
-.right_side .enter{
-  padding-right: 15px;
-}
-
-/*.double_ice-cream {
-  position: relative;
-  margin: 0 auto;
-  width: 652px;
-  height: 565px;
-}*/
-
-/*.double_ice-cream img {
-  position: absolute;
-  top: -40px;
-}*/
 
 .with_ice-cream {
   position: relative;
@@ -124,14 +127,13 @@ header p span{
 .with_ice-cream img {
   position: absolute;
   top: -320px;
-  left: 25%;
+  left: 13%;
   z-index: -1;
 }
-.index h1 {
+.index  {
   width: 670px;
   font-size: 60px;
   line-height: 60px;
-  /*---------------------------------------------------как можно выровнить по центру эту запись?*/
   margin: 0 auto 40px;
   text-align: center;
 }
@@ -146,7 +148,12 @@ header p span{
   border-radius: 35px;
   text-align: center;
   vertical-align: bottom;
-
+  padding: 7px 25px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: white;
+  font-size: 32px;
+  line-height: 44px;
 }
 
 .background_slider {
@@ -184,49 +191,133 @@ header p span{
 
 .banner {
   width: 420px;
+  border-radius: 15px;
   min-height: 230px;
   background-color: rgba(0,255,0, 0.3);
   margin-bottom: 25px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 25px;
+  line-height: 31px;
+  padding-bottom: 0;
+  /*-----------------------------------------------как сделать растягивающиеся паддинги? с 20px на 27px*/
 }
 
-.banner_left {
+.banner h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.banner .btn {
+  display: inline-block;
+  position: relative;
+  padding: 7px 25px;
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+  left: 200px;
+  height: 45px;
+  margin-right: 0;
+  border-radius: 35px;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: #ed5b3d;
+  font-size: 18px;
+  line-height: 24px;
+
+}
+
+.container > article:first-child {
   float: left;
+  background: white url("../img/raspberry.png") no-repeat;
 }
 
 .banner_right {
   float: right;
 }
 
+.container > article:nth-child(2){
+  background: white url("../img/chocolate.png") no-repeat;
+}
+
 .item_card article {
   width: 200px;
   min-height: 135 px;
-  background-color: rgba(0,200,0, 0.3);
+  /*background-color: rgba(0,200,0, 0.3);*/
   float: left;
   margin-right: 20px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
 }
 
 .item_card {
   margin-bottom: 40px;
 }
 
+.item_card article::before {
+  position:relative;
+  diplay: block;
+  content: "";
+}
+
+.item_card article::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white url("../img/hit.png") no-repeat;
+}
+
 .item_card article:last-child {
   margin-right: 0;
 }
 
+.item_card  span {
+  position: absolute;
+  font-size: 45px;
+  line-height: 45px;
+  /*top: 5px;*/
+  /*left: -100px;*/
+}
+
 .advantages {
   min-height: 353px;
-  min-width: 820px;
-  background-color: rgba(0,200,0, 0.3);
+  width: 820px;
   clear: both;
-  padding: 20px;
-  padding-top: 10px;
+  padding: 20px 27px;
+  margin: 0 auto;
   margin-bottom: 40px;
+  background: url("../img/wafle.png") no-repeat ;
+  color: black;
+}
+
+.advantages h2 {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0 0 7px 0;
+  text-decoration: none;
+  font-weight: normal;
 }
 .advantages div {
-  width:400px;
+  position: relative;
+  width: 345px;
   min-height: 115px;
-  background-color: rgba(0,200,0, 0.4);
+  font-size: 16px;
+  line-height: 22px;
+  margin-left: 55px;
   margin-bottom: 25px;
+}
+
+.advantages div img {
+  position: absolute;
+  left: -60px;
 }
 
 
@@ -234,16 +325,21 @@ header p span{
   float: left;
 }
 
-.advantage_3 {
+.advantage_2 {
   float: right;
 }
 
-.advantage_4 {
+.advantage_3 {
   float: left;
 }
 
-.advantage_2 {
+.advantage_4 {
   float: right;
+}
+
+.10_ways {
+  width: 20px;
+  background: url("../img/banner_d_l.jpg") no-repeat;
 }
 
 .map_block {
@@ -252,24 +348,62 @@ header p span{
 
 .connect_us {
   position: absolute;
+  color: black;
   top: 60px;
-  right: 20px;
+  right: 0;
   width: 300px;
   min-height: 300px;
-  background-color: rgba(0,200,0, 0.3);
+  background-color: #fdfefe;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.text_conteiner {
+  width:227px;
+}
+
+.connect_us a{
+  display: inline-block;
+  padding: 7px 25px;
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+  margin: 0 auto;
+  border-radius: 35px;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: #ed5b3d;
+  font-size: 18px;
+  line-height: 24px;
+}
+.connect_us h4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  margin-bottom: 7px;
+}
+
+.connect_us .address{
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0;
 }
 
 .map {
-  width: 900px;
+  min-width: 900px;
+  max-width: 1200px;
   margin: 0 -20px;
 }
 
 footer {
-  margin-left: -20px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: rgba(0,0,255, 0.3);
+  /*background-color: rgba(0,0,255, 0.3);*/
   min-width: 860px;
+  max-width: 1160px;
   min-height: 100px;
+  padding-bottom: 0 ;
 }
 
 .social {
@@ -279,10 +413,28 @@ footer {
 }
 
 .center_footer {
-  width: 420px;
+  position: relative;
+  max-width: 306px;
   min-height: 40px;
-  background-color: rgba(0,0,255, 0.4);
-  float: left;
+  /*background-color: rgba(0,0,255, 0.4);*/
+  margin: 0 auto;
+  font-size: 13px;
+  line-height: 18px;
+
+}
+
+.center_footer a {
+  color: white;
+  font-style: bold ;
+  /* --------------------------------------------------------как убрать выделение жирным?*/
+}
+
+.center_footer a:nth-of-type(2n-1){
+  margin-right: 30px;
+}
+.center_footer img {
+  position: absolute;
+  left: -23px;
 }
 
 .manufacturer {
