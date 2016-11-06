@@ -19,6 +19,19 @@ body {
   display: none;
 }
 
+.btn {
+  box-shadow: 0 3px 3px -1px  #a23324;
+}
+
+.btn:active {
+  box-shadow: inset 0 3px 3px -1px  #a23324;
+}
+
+.btn:hover {
+  /*REVIEW почему это свойство не срабатывает на всех элементах с классом btn?*/
+  background: #f07a63;
+}
+
 .main_container {
   width: 860px;
   margin: 0 auto;
@@ -33,39 +46,111 @@ header {
   /*background-color: rgba(0,0,255, 0.3);*/
 }
 
+.header_hight {
+  min-height: 75px;
+
+}
+
 .logo {
-  /*clear: both;*/
   float: left;
   margin-right: 30px;
 }
 
 .main_menu {
-  width: 350px;
+  position: relative;
+  width: 370px;
   margin: 0 auto;
   float: left;
   font-size: 16px;
   line-height: 18px;
 }
 
+.main_menu li {
+  padding: 5px 14px 0;
+  margin-top: -5px;
+  height: 32px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
 
-.main_menu ul {
+.main_menu li:nth-of-type(n+1) {
+  margin-left: -5px;
+}
+
+.main_menu  li:hover {
+  border-radius: 20px;
+  text-decoration: none;
+  background: #f7f6f3;
+  color: black;
+}
+
+.main_menu  li:hover a{
+  text-decoration: none;
+}
+
+.menu_sub {
+  display: none;
+  position: absolute;
+  left: -20px;
+  min-height: 171px;
+  width: 142px;
+  border-radius: 7px;
   margin: 0;
-  margin-top: 30px;
   padding: 0;
-  /*background-color: rgba(0,0,255, 0.4);*/
+  background-color: white;
 }
 
-.main_menu li, .sub_menu li {
+.main_menu > li:hover .menu_sub {
+  /*review ----------------------------------------------------почему не работает это свойство для выплывающего меню?*/
+  display: block;
+}
+
+.main_menu .menu_sub li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ .menu_sub li:first-of-type {
+   /*review ----------------------------------------------------почему этот элемент не выделяется жирным?*/
+  font-weight: bold;
+}
+
+  .menu_sub li a {
+  box-sizing: border-box;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: normal;
+  text-align: left;
+  display: block;
+  color: black;
+  width: 140px;
+  min-height: 32px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.menu_sub  a:hover {
+  background-color: #fbded7;
+}
+
+.main_menu > ul {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.main_menu  li, .sub_menu  li {
   display: inline-block;
-  margin-right: 27px;
-  text-decoration: underline;
-  vertical-align: top;
+  /*margin-right: 27px;*/
 }
 
-.main-menu li  {
+.main_menu li,.main_menu a  {
   color: inherit;
-  /*    ---------------------------------------------   почему белый цвет текста не наследуется?*/
 }
+
 
 .main_menu li:last-child {
   margin-right: 0;
@@ -75,49 +160,148 @@ header {
   float: right;
   width: 270px;
   margin-top: 15px;
+  /*background-color: rgba(0,0,255, 0.3);*/
+}
+
+.search_box_hover {
+  display: none;
+  position: absolute;
+  top:  37px;
+  right: 0;
+  min-width: 20px;
+  min-height: 10px;
+  background-color: #f8f7f4;
+  padding: 20px 15px;
+  border-radius: 7px;
+}
+
+.hidden_search {
+  height: 44px;
+  width: 310px;
+  border-radius: 7px;
+  padding-left: 15px;
 }
 
 .right_side a{
-  /*-------------------------------------------------------------как прижать эти кнопки вправо ?   */
+  text-decoration: none;
+  color: inherit;
+  float: right;
   display: inline-block;
   height: 32px;
-  background: rgba(157,177,165, 0.2);
   box-sizing: border-box;
   padding: 5px 35px 5px 15px;
+  vertical-align: top;
+  background: rgba(157,177,165, 0.2);
   border-radius: 20px;
 }
 
-.right_side .enter{
+.right_side .enter {
   padding-right: 15px;
+  margin-right: 10px;
 }
 
-/*.right_side .basket {
-margin-right: -10px;
-}*/
+.hidden_enter_form {
+  display: none;
+  position: absolute;
+  height: 215px;
+  width: 277px;
+  background-color: #f7f6f3;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
 
-.right_side .search {
+.hidden_enter_form input {
+  height: 44px;
+  width: 240px;
+  box-sizing: border-box;
+  padding-left: 15px;
+  border-radius: 7px;
+  border: 1px solid #999999;
+  margin-bottom: 20px;
+}
+
+.hidden_enter_form button {
+  border-radius: 35px;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  padding: 7px 25px;
+  height: 45px;
+  width: 102px;
+  background-color: #ed5b3d;
+}
+
+.hidden_enter_form a {
+  color: black;
+  display: inline;
+  text-decoration: underline;
+  border-radius: 0;
+  background-color: #f7f6f3;
+  float: none;
+  padding: 0;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: normal;
+}
+.enter_a_box {
+  width: 120px;
+  height: 40px;
+  float: right;
+  margin-top: 5px;
+}
+
+.enter:hover .hidden_enter_form {
+  display: block;
+}
+
+.enter:hover {
+  background:#f7f6f3;
+  color: black;
+}
+
+.right_side .search_btn {
   width: 32px;
-  height: 32px;
-  background: url("../img/Лупа.png") no-repeat;
+  background: rgba(157,177,165, 0.2) url("../img/Лупа.png") no-repeat center center;
   border-radius: 50%;
   box-shadow: none;
+  border: 0;
+  padding: 0;
 }
 
+.search_btn:hover {
+  background-color: #f8f7f4;
+  /*вырезать черную лупу*/
+}
+
+.search_btn:hover .search_box_hover{
+    /*review ----------------------------------------------------почему не работает это свойство для выплывающего меню?*/
+  display: block;
+}
+
+.search_box {
+  margin:0;
+  display: inline-block;
+  position: relative;
+}
+
+.header_low {
+  min-height: 37px;
+  margin-top: -20px;
+}
 header p {
   float: right;
   width: 170px;
   text-align: right;
   font-size: 22px;
   line-height: 24px;
-  margin-bottom: 0;
+  margin:0;
 }
 
 header p span{
   font-size: 14px;
   line-height: 16px;
 }
-
-
 
 .with_ice-cream {
   position: relative;
@@ -168,24 +352,18 @@ header p span{
   margin-right: 6px;
   width: 20px;
   height: 20px;
-  background-color: white;
   border-radius: 50%;
+  border: 2px solid white;
+  box-sizing: border-box;
 }
 
-.catalog h1 {
-  color: black;
-  font-size: 30px;
-  float: left;
+.background_slider li:hover {
+  background: #b2c1b7;
 }
-
-.catalog_sub {
-  display: none;
-}
-
 
 .container {
   clear: both;
-  background-color: rgba(0,0,255, 0.3);
+  /*background-color: rgba(0,0,255, 0.3);*/
   margin-bottom: 40px;
 }
 
@@ -193,14 +371,18 @@ header p span{
   width: 420px;
   border-radius: 15px;
   min-height: 230px;
-  background-color: rgba(0,255,0, 0.3);
+  /*background-color: rgba(0,255,0, 0.3);*/
   margin-bottom: 25px;
   padding: 20px;
   box-sizing: border-box;
   font-size: 25px;
   line-height: 31px;
   padding-bottom: 0;
-  /*-----------------------------------------------как сделать растягивающиеся паддинги? с 20px на 27px*/
+  float: left;
+}
+
+.banner_left{
+  margin-right: 20px;
 }
 
 .banner h2 {
@@ -237,18 +419,13 @@ header p span{
   background: white url("../img/raspberry.png") no-repeat;
 }
 
-.banner_right {
-  float: right;
-}
-
 .container > article:nth-child(2){
   background: white url("../img/chocolate.png") no-repeat;
 }
 
 .item_card article {
   width: 200px;
-  min-height: 135 px;
-  /*background-color: rgba(0,200,0, 0.3);*/
+  min-height: 135px;
   float: left;
   margin-right: 20px;
   font-size: 16px;
@@ -258,12 +435,7 @@ header p span{
 
 .item_card {
   margin-bottom: 40px;
-}
-
-.item_card article::before {
   position:relative;
-  diplay: block;
-  content: "";
 }
 
 .item_card article::before {
@@ -279,18 +451,32 @@ header p span{
   margin-right: 0;
 }
 
-.item_card  span {
+.item_card  p{
+  margin-top: 0;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.item_card span  {
+  /*REVIEW почему цена уехала? Притом уехала только в index,  в catalog осталась на месте*/
   position: absolute;
   font-size: 45px;
   line-height: 45px;
-  /*top: 5px;*/
-  /*left: -100px;*/
+  top: 135px;
+  left: 0;
+  font-weight: bold;
+}
+
+.item_card span p {
+  display: inline;
+  font-size: 35px;
+  text-decoration: none;
 }
 
 .advantages {
+  font-weight: normal;
   min-height: 353px;
   width: 820px;
-  clear: both;
   padding: 20px 27px;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -303,7 +489,7 @@ header p span{
   line-height: 26px;
   margin: 0 0 7px 0;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: bold;
 }
 .advantages div {
   position: relative;
@@ -321,15 +507,18 @@ header p span{
 }
 
 
-.advantage_1 {
+.container .advantage_1 {
   float: left;
+  margin-bottom: 0;
 }
 
-.advantage_2 {
+.container .advantage_2 {
   float: right;
+  margin-bottom: 7px;
 }
 
 .advantage_3 {
+  margin: -15px 0 0 0;
   float: left;
 }
 
@@ -337,9 +526,9 @@ header p span{
   float: right;
 }
 
-.10_ways {
+.banner .banner_left .10_ways {
   width: 20px;
-  background: url("../img/banner_d_l.jpg") no-repeat;
+  background: white;
 }
 
 .map_block {
@@ -361,6 +550,43 @@ header p span{
 
 .text_conteiner {
   width:227px;
+}
+
+.delivery {
+  float: left;
+  padding: 25px;
+  background:url("../img/banner_back.png") #f8f7f4;
+
+  color: #8e8e8d;
+}
+
+.delivery p {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+.delivery input {
+  width: 228px;
+  min-height: 42px;
+  border-radius: 4px;
+}
+
+.delivery .btn_last {
+  width: 129px;
+  padding-left: 18px;
+  border: none;
+  left: 10px;
+}
+
+.10_ways h4 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.10_ways p {
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .connect_us a{
@@ -425,13 +651,17 @@ footer {
 
 .center_footer a {
   color: white;
-  font-style: bold ;
-  /* --------------------------------------------------------как убрать выделение жирным?*/
+  font-weight: normal ;
 }
 
 .center_footer a:nth-of-type(2n-1){
   margin-right: 30px;
 }
+
+.center_footer a:first-of-type {
+  font-weight: bold;
+}
+
 .center_footer img {
   position: absolute;
   left: -23px;
@@ -441,9 +671,98 @@ footer {
   min-height: 60px;
   width: 200px;
   float: right;
+  margin-top: -10px;
+  font-weight: normal;
 }
 
 .manufacturer p {
   font-size: 12px;
   line-height: 18px;
+}
+
+.manufacturer a {
+  color: inherit;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+
+ .catalog {
+  margin-bottom: 0;
+}
+
+.header_low .sub_menu {
+  position: relative;
+  top: 35px;
+  left: -35px;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.sub_menu {
+  font-weight: normal;
+}
+
+.sub_menu a {
+  color: inherit;
+}
+
+.sub_menu li:last-child {
+  text-decoration: none;
+}
+
+.catalog_h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.catalog_sub {
+  display: none;
+}
+
+.filter {
+  font-size: 14px;
+  line-height: 16px;
+  display: block;
+  min-height: 133px;
+  margin-bottom: 39px;
+}
+
+.choose_item article {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+  margin-left: 0;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: underline;
+  font-weight: normal;
+  text-align: center;
+  width: 200px;
+  min-height: 135px;
+  /*background-color: rgba(0,200,0, 0.3);*/
+}
+
+.choose_item article:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+.page_nav ul {
+  float: right;
+}
+
+.page_nav li {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.page_nav a {
+  color: inherit;
+  text-decoration: none;
 }
