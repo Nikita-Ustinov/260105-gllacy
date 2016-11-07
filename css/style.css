@@ -36,19 +36,16 @@ body {
   width: 860px;
   margin: 0 auto;
   padding: 0 20px;
-  /*background-color: rgba(0,0,255, 0.1);*/
 }
 
 header {
   margin: 0 -20px 280px;
   padding: 10px 20px;
   min-height: 115px;
-  /*background-color: rgba(0,0,255, 0.3);*/
 }
 
 .header_hight {
   min-height: 75px;
-
 }
 
 .logo {
@@ -144,7 +141,6 @@ header {
 
 .main_menu  li, .sub_menu  li {
   display: inline-block;
-  /*margin-right: 27px;*/
 }
 
 .main_menu li,.main_menu a  {
@@ -160,7 +156,6 @@ header {
   float: right;
   width: 270px;
   margin-top: 15px;
-  /*background-color: rgba(0,0,255, 0.3);*/
 }
 
 .search_box_hover {
@@ -198,6 +193,18 @@ header {
 .right_side .enter {
   padding-right: 15px;
   margin-right: 10px;
+  position: relative;
+  padding-left: 45px;
+}
+
+.right_side .enter::before {
+  position: absolute;
+  content:"";
+  top: 5px;
+  left: 18px;
+  width: 20px;
+  height: 20px;
+  background: url("../img/Enter.png") no-repeat center center;
 }
 
 .hidden_enter_form {
@@ -258,6 +265,11 @@ header {
 .enter:hover {
   background:#f7f6f3;
   color: black;
+  }
+
+.enter:hover .enter::before {
+  background: url("../img/enter_black.png") no-repeat center center;
+/*REVIEW -------------------------------------------------------------почеу этот элемент не работает?*/
 }
 
 .right_side .search_btn {
@@ -271,9 +283,11 @@ header {
 
 .search_btn:hover {
   background-color: #f8f7f4;
-  /*вырезать черную лупу*/
 }
 
+.search_btn:hover .search_btn::before {
+  background: url("../img/ЛупаЧерная.png") no-repeat center center;
+}
 .search_btn:hover .search_box_hover{
     /*review ----------------------------------------------------почему не работает это свойство для выплывающего меню?*/
   display: block;
@@ -363,7 +377,6 @@ header p span{
 
 .container {
   clear: both;
-  /*background-color: rgba(0,0,255, 0.3);*/
   margin-bottom: 40px;
 }
 
@@ -371,7 +384,6 @@ header p span{
   width: 420px;
   border-radius: 15px;
   min-height: 230px;
-  /*background-color: rgba(0,255,0, 0.3);*/
   margin-bottom: 25px;
   padding: 20px;
   box-sizing: border-box;
@@ -424,6 +436,7 @@ header p span{
 }
 
 .item_card article {
+  position: relative;
   width: 200px;
   min-height: 135px;
   float: left;
@@ -435,7 +448,7 @@ header p span{
 
 .item_card {
   margin-bottom: 40px;
-  position:relative;
+  /*position: relative;*/
 }
 
 .item_card article::before {
@@ -458,7 +471,6 @@ header p span{
 }
 
 .item_card span  {
-  /*REVIEW почему цена уехала? Притом уехала только в index,  в catalog осталась на месте*/
   position: absolute;
   font-size: 45px;
   line-height: 45px;
@@ -471,6 +483,48 @@ header p span{
   display: inline;
   font-size: 35px;
   text-decoration: none;
+}
+
+.card_hover {
+  display: none;
+  position: absolute;
+  min-height: 362px;
+  width: 220px;
+  background-color: rgba(255,255,255, 0.3);
+  left: -10px;
+  top: -10px;
+  z-index: 1;
+  box-shadow: 0 6px 10px 5px #7f968a;
+}
+
+.card_hover a {
+  position: absolute;
+  display: block;
+  border-radius: 20px;
+  width: 200px;
+  height: 45px;
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 11px 0 2px;
+  background-color: #ed5b3d;
+  font-size: 18px;
+  line-height: 24px;
+  bottom: 20px;
+  left: 11px;
+  z-index: 2;
+}
+
+.item_card article:hover .card_hover{
+  display: block;
+}
+
+.item_card:hover .card_upper_hover{
+  text-decoration: none;
+  /*review -------------------------------------------------------------почему подчеркивание остается?*/
+  position: relative;
+  z-index: 5;
 }
 
 .advantages {
@@ -625,7 +679,6 @@ header p span{
 footer {
   margin: 0 auto;
   padding: 20px;
-  /*background-color: rgba(0,0,255, 0.3);*/
   min-width: 860px;
   max-width: 1160px;
   min-height: 100px;
@@ -642,11 +695,9 @@ footer {
   position: relative;
   max-width: 306px;
   min-height: 40px;
-  /*background-color: rgba(0,0,255, 0.4);*/
   margin: 0 auto;
   font-size: 13px;
   line-height: 18px;
-
 }
 
 .center_footer a {
@@ -760,6 +811,19 @@ footer {
   border-radius: 50%;
   font-size: 16px;
   line-height: 18px;
+  text-align: center;
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+
+.page_nav li:nth-of-type(2) {
+  background: white;
+  color: black;
+
+}
+
+.page_nav li:hover {
+  background: rgba(255,255,255, 0.3);
 }
 
 .page_nav a {
