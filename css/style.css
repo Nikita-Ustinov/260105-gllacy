@@ -19,6 +19,27 @@ body {
   display: none;
 }
 
+.active {
+  background-color: #d07058;
+}
+
+.menu_sub .active a {
+  padding-bottom: 0;
+}
+
+.menu_sub .active a, .main_menu .active a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu_sub .active {
+  border-radius: 0;
+}
+
+ .menu_sub .active a:hover, .main_menu .active:hover{
+  background-color: #d07058;
+}
+
 .btn {
   box-shadow: 0 3px 3px -1px  #a23324;
 }
@@ -29,7 +50,7 @@ body {
 
 .btn:hover {
   /*REVIEW почему это свойство не срабатывает на всех элементах с классом btn?*/
-  background: #f07a63;
+  background: #f48568;
 }
 
 .main_container {
@@ -68,6 +89,7 @@ header {
   height: 32px;
   vertical-align: middle;
   box-sizing: border-box;
+  border-radius: 20px;
 }
 
 .main_menu li:nth-of-type(n+1) {
@@ -75,7 +97,7 @@ header {
 }
 
 .main_menu  li:hover {
-  border-radius: 20px;
+
   text-decoration: none;
   background: #f7f6f3;
   color: black;
@@ -85,16 +107,22 @@ header {
   text-decoration: none;
 }
 
+.main_menu  li:active {
+  box-shadow: inset 0 2px 4px #696969;
+}
+
 .menu_sub {
   display: none;
   position: absolute;
-  left: -20px;
+  left: -7px;
+  top: 52px;
   min-height: 171px;
   width: 142px;
   border-radius: 7px;
   margin: 0;
   padding: 0;
   background-color: white;
+  z-index: 10;
 }
 
 .main_menu > li:hover .menu_sub {
@@ -106,11 +134,13 @@ header {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
 }
 
- .menu_sub li:first-of-type {
-   /*review ----------------------------------------------------почему этот элемент не выделяется жирным?*/
+ .menu_sub li:first-of-type a {
+   /*review ----------------------------------------------------как укоротить линию подчеркивания?*/
   font-weight: bold;
+  border-bottom: 1px solid #d1d0ce;
 }
 
   .menu_sub li a {
@@ -123,7 +153,6 @@ header {
   text-align: left;
   display: block;
   color: black;
-  width: 140px;
   min-height: 32px;
   font-size: 14px;
   line-height: 16px;
@@ -131,6 +160,10 @@ header {
 
 .menu_sub  a:hover {
   background-color: #fbded7;
+}
+
+.menu_sub  a:active {
+  background-color: #f6b5a5;
 }
 
 .main_menu > ul {
@@ -225,7 +258,56 @@ header {
   padding-left: 15px;
   border-radius: 7px;
   border: 1px solid #999999;
+  /*margin-bottom: 20px;*/
+}
+
+.hidden_enter_form .mail_box::before {
+  display: none;
+  top: -14px;
+  position: absolute;
+  content: "Электронная почта";
+  margin-left: 16px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #5b9ddf;
+  position: absolute;
+}
+
+.mail_box {
+  position: relative;
+  /*margin-top: -16px;*/
+}
+
+.password_box {
+  position:relative;
+  padding-top: 20px;
   margin-bottom: 20px;
+}
+
+.hidden_enter_form .password_box::before {
+  display: none;
+  top: 5px;
+  position: absolute;
+  content: "Пароль";
+  margin-left: 16px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #5b9ddf;
+}
+
+.hidden_enter_form input:hover {
+  border: 2px solid #c7c6c5;
+}
+
+.hidden_enter_form input:focus {
+  border: 2px solid #8fbdec;
+  border-radius: 7px;
+  outline: none;
+}
+
+.hidden_enter_form input:focus .password_box::before, .hidden_enter_form input:focus .mail_box::before {
+  /*review -----------------------------------------------------------------------почему не появляется при нажатии?*/
+  display: inline;
 }
 
 .hidden_enter_form button {
@@ -428,22 +510,31 @@ header p span{
 
 .container > article:first-child {
   float: left;
-  background: white url("../img/raspberry.png") no-repeat;
+  background-image: url("../img/raspberry.png") ;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: blue;
+
 }
 
 .container > article:nth-child(2){
-  background: white url("../img/chocolate.png") no-repeat;
+  background: url("../img/chocolate.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: blue;
 }
 
 .item_card article {
+  display: inline-block;
+  vertical-align: top;
   position: relative;
   width: 200px;
   min-height: 135px;
-  float: left;
-  margin-right: 20px;
+  margin-right: 15px;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .item_card {
@@ -458,6 +549,8 @@ header p span{
   height: 60px;
   border-radius: 50%;
   background: white url("../img/hit.png") no-repeat;
+  top: 0;
+  left: 0;
 }
 
 .item_card article:last-child {
@@ -521,10 +614,16 @@ header p span{
 }
 
 .item_card:hover .card_upper_hover{
-  text-decoration: none;
-  /*review -------------------------------------------------------------почему подчеркивание остается?*/
   position: relative;
   z-index: 5;
+}
+
+.item_card article:hover .card_upper_hover p {
+  text-decoration: none;
+}
+
+.item_card:hover article::before {
+  z-index: 6;
 }
 
 .advantages {
@@ -676,6 +775,109 @@ header p span{
   margin: 0 -20px;
 }
 
+.feedback {
+  display:none;
+  width: 477px;
+  height: 442px;
+  background-color: #f8f7f4;
+  border-radius: 7px;
+  padding: 18px 25px;
+  box-sizing: border-box;
+}
+
+.feedback h3 {
+  color: black;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0 0 23px;
+}
+
+.feedback input {
+  width: 268px;
+  height: 44px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.feedback textarea {
+  padding: 13px 14px;
+  border-radius: 7px;
+  width: 429px;
+  height: 155px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+}
+
+.feedback .btn {
+  display: block;
+  width: 140px;
+  background-color: #ed5b3d;
+  min-height: 45px;
+  margin-left: 291px;
+  margin-bottom: 25px;
+  margin-top: -5px;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 7px 23px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+}
+
+.your_name {
+  position: relative;
+}
+
+.your_name::before {
+  display: none;
+  position: absolute;
+  top: -14px;
+  position: absolute;
+  content: "Как вас зовут?";
+  margin-left: 16px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #5b9ddf;
+}
+
+.your_mail {
+  position:relative;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.your_mail::before {
+  display: none;
+  position: absolute;
+  top: 0;
+  position: absolute;
+  content: "Ваша почта для ответа?";
+  margin-left: 16px;
+  font-size: 11px;
+  line-height: 13px;
+  color: #5b9ddf;
+}
+
+.your_mail input:focus .your_mail::before{
+  display: block;
+}
+/*review ----------------------------------почему не появляются при нажатии на область?*/
+.your_name input:focus .your_name::before{
+  display: block;
+}
+
+.feedback_btn:active  .feedback{
+  display: block;
+}
+
 footer {
   margin: 0 auto;
   padding: 20px;
@@ -689,6 +891,41 @@ footer {
   width: 200px;
   margin-right:20px;
   float: left;
+  min-height: 32px;
+  margin-left: -20px;
+}
+
+.social a {
+  display: inline-block;
+  border: 4px solid #c2cec7;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.social a:last-of-type {
+  margin-right: 0;
+}
+
+.social a:hover {
+ background: white;
+}
+.vk {
+  background:  url("../img/ВК.png") no-repeat;
+}
+
+.fb {
+  background:  url("../img/ФБ.png") no-repeat;
+}
+
+.inst {
+  background:  url("../img/Инста.png") no-repeat;
+}
+
+.tw {
+  background:  url("../img/Твитер.png") no-repeat;
 }
 
 .center_footer {
@@ -788,12 +1025,10 @@ footer {
   margin-left: 0;
   font-size: 16px;
   line-height: 22px;
-  text-decoration: underline;
   font-weight: normal;
   text-align: center;
   width: 200px;
   min-height: 135px;
-  /*background-color: rgba(0,200,0, 0.3);*/
 }
 
 .choose_item article:nth-of-type(4n) {
@@ -826,7 +1061,15 @@ footer {
   background: rgba(255,255,255, 0.3);
 }
 
+.page_nav li:nth-of-type(2):hover {
+  background: white;
+}
+
 .page_nav a {
   color: inherit;
   text-decoration: none;
+}
+
+.catalog_main {
+  border-bottom: 1px solid #c2cec7;
 }

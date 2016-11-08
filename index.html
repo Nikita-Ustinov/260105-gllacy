@@ -42,8 +42,12 @@
               Выход
             </a>
             <form class="hidden_enter_form">
-              <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
-              <input type="password" name="password" placeholder="Пароль">
+              <div class="mail_box">
+                <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
+              </div>
+              <div class="password_box">
+                <input type="password" name="password" placeholder="Пароль">
+              </div>
               <button type="submit" name="enter" class="btn">Войти</button>
               <div class="enter_a_box">
                 <a href="#">Забыли пароль?</a>
@@ -82,7 +86,7 @@
             <article>
               <div class="card_upper_hover">
                 <img src="img/1.png" width="200" height="200" alt="1">
-                <span>310 Р<p>/кг</p></span>
+                <span>310	&#8381<p>/кг</p></span>
                 <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
               </div>
               <div class="card_hover ">
@@ -92,7 +96,7 @@
             <article>
               <div class="card_upper_hover">
                 <img src="img/2.png" width="200" height="200" alt="1">
-                <span>380 Р<p>/кг</p></span>
+                <span>380 &#8381<p>/кг</p></span>
                 <p>Сливочно-кофейное с кусочками шоколада</p>
               </div>
               <div class="card_hover ">
@@ -102,7 +106,7 @@
             <article>
               <div class="card_upper_hover">
                 <img src="img/3.png" width="200" height="200" alt="1">
-                <span>355 Р<p>/кг</p></span>
+                <span>355	&#8381<p>/кг</p></span>
                 <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
               </div>
               <div class="card_hover ">
@@ -112,7 +116,7 @@
             <article>
               <div class="card_upper_hover">
                 <img src="img/4.png" width="200" height="200" alt="1">
-                <span>415 Р<p>/кг</p></span>
+                <span>415 &#8381<p>/кг</p></span>
                 <p>Сливочное крем-брюле с карамельной подливкой</p>
               </div>
               <div class="card_hover ">
@@ -166,7 +170,7 @@
               <h4>Для заказов по телефону:</h4>
               <p>8 812 450-25-25 (с 10 до 20 ежедневно)</p>
             </div>
-            <a href="#" class=" btn">Форма обратной связи</a>
+            <a href="#" class="feedback_btn btn">Форма обратной связи</a>
           </aside>
           <section class="map">
             <img src="img/map.png" alt="map" width="900" height="430">
@@ -174,19 +178,26 @@
         </div>
         <form class="hidden feedback">
           <h3>Мы обязательно вам ответим!</h3>
-          <button type="button" class="b_close btn"></button>
+          <div class="your_name">
           <input type="text" name="name" placeholder="Как вас зовут?">
+          </div>
+          <div class="your_mail">
           <input type="email" name="mail" placeholder="Ваша почта для ответа?">
-          <textarea rows="10"></textarea>
-          <button type="submit" value="send">Отправить</button>
+          </div>
+          <textarea rows="10" placeholder="Напишите что-нибудь..."></textarea>
+          <button type="submit" value="send" class="btn">Отправить</button>
         </form>
       </main>
       <footer class="clearfix">
         <section class="social">
-          <a href="#"><img src="img/Твитер.png" class="tw" alt="Твиттер"></img></a>
+          <a href="#" class="tw"></a>
+          <a href="#" class="inst"></a>
+          <a href="#" class="fb"></a>
+          <a href="#" class="vk"></a>
+          <!-- <a href="#"><img src="img/Твитер.png" class="tw" alt="Твиттер"></img></a>
           <a href="#"><img src="img/Инста.png" class="inst" alt="Инстаграм"></img></a>
           <a href="#"><img src="img/ФБ.png" class="fb" alt="Фейсбук"></img></a>
-          <a href="#"><img src="img/ВК.png" class="vk" alt="Вконтакте"></img></a>
+          <a href="#"><img src="img/ВК.png" class="vk" alt="Вконтакте"></img></a> -->
         </section>
         <section class="manufacturer">
           <img src="img/HTMLAcademy_logo.png" alt="HTML Academy" width="108" height="38">

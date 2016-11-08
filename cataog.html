@@ -13,10 +13,10 @@
           <img src="img/Logo.png" class="logo" alt="logo" width="157" height="69">
           <nav class="main_menu">
             <ul>
-              <li>Каталог</li>
-                <ul class="catalog_sub">
+              <li class="active"><a href="#" >Каталог</a></li>
+                <ul class="menu_sub">
                   <li><a href="#">Новинки</a></li>
-                  <li><a href="#">Сливочное</a></li>
+                  <li class="active"><a href="#">Сливочное</a></li>
                   <li><a href="#">Щербеты</a></li>
                   <li><a href="#">Фруктовый лед</a></li>
                   <li><a href="#">Мелорин</a></li>
@@ -28,8 +28,10 @@
           </nav>
           <div class="right_side">
             <div class="search_box">
-            <button class="search" type="button" name="Поиск"></button>
-            <input class="hidden" type="search" >
+            <a href="#" class="search_btn"></a>
+            <div class="search_box_hover">
+              <input class="hidden_search" type="search" placeholder="Что ищем?">
+            </div>
             </div>
             <a href="#" class="basket">
               <img src="img/trolley.png"  class="img_basket" alt="->" width="18" height="16">
@@ -39,8 +41,12 @@
               Выход
             </a>
             <form class="hidden_enter_form">
-              <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
-              <input type="password" name="password" placeholder="Пароль">
+              <div class="mail_box">
+                <input type="email" name="mail" autocomplete="on" placeholder="Электронная почта">
+              </div>
+              <div class="password_box">
+                <input type="password" name="password" placeholder="Пароль">
+              </div>
               <button type="submit" name="enter" class="btn">Войти</button>
               <div class="enter_a_box">
                 <a href="#">Забыли пароль?</a>
@@ -60,7 +66,7 @@
           </nav>
         </div>
       </header>
-      <main>
+      <main class="catalog_main">
         <h1 class="catalog_h1">Сливочное мороженое</h1>
         <section class="filter">
           <form>
@@ -90,121 +96,121 @@
             <button type="submit">Показать</button>
           </form>
         </section>
-        <section class="choose_item ">
+        <section class="choose_item item_card">
           <article>
             <div class="card_upper_hover">
               <img src="img/1.png" width="200" height="200" alt="1">
-              <span>310 Р<p>/кг</p></span>
+              <span>310	&#8381<p>/кг</p></span>
               <p>Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/2.png" width="200" height="200" alt="2">
-              <span>380 Р<p>/кг</p></span>
+              <span>380	&#8381<p>/кг</p></span>
               <p>Сливочно-кофейное с кусочками шоколада</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/3.png" width="200" height="200" alt="3">
-              <span>355 Р<p>/кг</p></span>
+              <span>355 &#8381<p>/кг</p></span>
               <p>Сливочно-клубничное с присыпкой из белого шоколада</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/4.png" width="200" height="200" alt="4">
-              <span>415 Р<p>/кг</p></span>
+              <span>415	&#8381<p>/кг</p></span>
               <p>Сливочное крем-брюле с карамельной подливкой</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/5.png" width="200" height="200" alt="5">
-              <span>325 Р<p>/кг</p></span>
+              <span>325	&#8381<p>/кг</p></span>
               <p>Сливочное с брусничным джемом</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/6.png" width="200" height="200" alt="6">
-              <span>410 Р<p>/кг</p></span>
+              <span>410 &#8381<p>/кг</p></span>
               <p>Сливочно-черничное с цельными ягодами черники </p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/7.png" width="200" height="200" alt="7">
-              <span>375 Р<p>/кг</p></span>
+              <span>375 &#8381<p>/кг</p></span>
               <p>Сливочно-лимонное с карамельной присыпкой</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/8.png" width="200" height="200" alt="8">
-              <span>320 Р<p>/кг</p></span>
+              <span>320 &#8381<p>/кг</p></span>
               <p>Сливочное с шоколадной стружкой</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/9.png" width="200" height="200" alt="9">
-              <span>440 Р<p>/кг</p></span>
+              <span>440 &#8381<p>/кг</p></span>
               <p>Сливочно-ванильное с кусочками шоколада</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/10.png" width="200" height="200" alt="10">
-              <span>435 Р<p>/кг</p></span>
+              <span>435 &#8381<p>/кг</p></span>
               <p>Сливочноe с ментоловым сиропом</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/11.png" width="200" height="200" alt="11">
-              <span>355 Р<p>/кг</p></span>
+              <span>355 &#8381<p>/кг</p></span>
               <p>Сливочное с кусочками черного шоколада</p>
             </div>
             <div class="card_hover ">
               <a href="#" class="btn">Быcтрый просмотр</a>
             </div>
           </article>
-          <article class="item_card">
+          <article>
             <div class="card_upper_hover">
               <img src="img/12.png" width="200" height="200" alt="12">
-              <span>420 Р<p>/кг</p></span>
+              <span>420 &#8381<p>/кг</p></span>
               <p>Сливочное с мятным сиропом</p>
             </div>
             <div class="card_hover ">
@@ -226,10 +232,10 @@
       </main>
       <footer class="clearfix">
         <section class="social">
-          <a href="#"><img src="img/Твитер.png" class="tw" alt="Твиттер"></img></a>
-          <a href="#"><img src="img/Инста.png" class="inst" alt="Инстаграм"></img></a>
-          <a href="#"><img src="img/ФБ.png" class="fb" alt="Фейсбук"></img></a>
-          <a href="#"><img src="img/ВК.png" class="vk" alt="Вконтакте"></img></a>
+          <a href="#" class="tw"></a>
+          <a href="#" class="inst"></a>
+          <a href="#" class="fb"></a>
+          <a href="#" class="vk"></a>
         </section>
         <section class="manufacturer">
           <img src="img/HTMLAcademy_logo.png" alt="HTML Academy" width="108" height="38">
