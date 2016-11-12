@@ -23,6 +23,10 @@ body {
   background-color: #d07058;
 }
 
+.selected {
+  background-color: white;
+}
+
 .menu_sub .active a {
   padding-bottom: 0;
 }
@@ -49,7 +53,6 @@ body {
 }
 
 .btn:hover {
-  /*REVIEW почему это свойство не срабатывает на всех элементах с классом btn?*/
   background: #f48568;
 }
 
@@ -125,7 +128,7 @@ header {
   z-index: 10;
 }
 
-.main_menu > li:hover .menu_sub {
+.main_menu ul > li:hover .menu_sub {
   /*review ----------------------------------------------------почему не работает это свойство для выплывающего меню?*/
   display: block;
 }
@@ -210,6 +213,33 @@ header {
   padding-left: 15px;
 }
 
+.right_side .search_btn {
+  width: 32px;
+  background: rgba(157,177,165, 0.2) url("../img/Lupa.png") no-repeat center center;
+  border-radius: 50%;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+}
+
+.search_btn:hover {
+  background: #f8f7f4 url("../img/BlackLupa.png") no-repeat center center;
+}
+
+.search_btn:hover + .search_box_hover{
+  display: block;
+}
+
+.search_box_hover:hover {
+  display: block;
+}
+
+.search_box {
+  margin:0;
+  display: inline-block;
+  position: relative;
+}
+
 .right_side a{
   text-decoration: none;
   color: inherit;
@@ -258,7 +288,6 @@ header {
   padding-left: 15px;
   border-radius: 7px;
   border: 1px solid #999999;
-  /*margin-bottom: 20px;*/
 }
 
 .hidden_enter_form .mail_box::before {
@@ -275,7 +304,6 @@ header {
 
 .mail_box {
   position: relative;
-  /*margin-top: -16px;*/
 }
 
 .password_box {
@@ -306,7 +334,7 @@ header {
 }
 
 .hidden_enter_form input:focus .password_box::before, .hidden_enter_form input:focus .mail_box::before {
-  /*review -----------------------------------------------------------------------почему не появляется при нажатии?*/
+  /*review ---почему не появляется при нажатии?*/
   display: inline;
 }
 
@@ -350,35 +378,8 @@ header {
   }
 
 .enter:hover .enter::before {
+  /*review  не применяется этот стиль*/
   background: url("../img/enter_black.png") no-repeat center center;
-/*REVIEW -------------------------------------------------------------почеу этот элемент не работает?*/
-}
-
-.right_side .search_btn {
-  width: 32px;
-  background: rgba(157,177,165, 0.2) url("../img/Лупа.png") no-repeat center center;
-  border-radius: 50%;
-  box-shadow: none;
-  border: 0;
-  padding: 0;
-}
-
-.search_btn:hover {
-  background-color: #f8f7f4;
-}
-
-.search_btn:hover .search_btn::before {
-  background: url("../img/ЛупаЧерная.png") no-repeat center center;
-}
-.search_btn:hover .search_box_hover{
-    /*review ----------------------------------------------------почему не работает это свойство для выплывающего меню?*/
-  display: block;
-}
-
-.search_box {
-  margin:0;
-  display: inline-block;
-  position: relative;
 }
 
 .header_low {
@@ -457,6 +458,10 @@ header p span{
   background: #b2c1b7;
 }
 
+.background_slider .selected:hover {
+  background: white;
+}
+
 .container {
   clear: both;
   margin-bottom: 40px;
@@ -489,26 +494,24 @@ header p span{
   line-height: 22px;
 }
 
-.banner .btn {
+
+.btn_banner {
   display: inline-block;
+  background-color: #ed5b3d;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
   position: relative;
-  padding: 7px 25px;
+  padding: 10px 25px;
   box-sizing: border-box;
   color: white;
   text-decoration: none;
   left: 200px;
   height: 45px;
-  margin-right: 0;
   border-radius: 35px;
-  text-align: center;
-  vertical-align: bottom;
-  background-color: #ed5b3d;
-  font-size: 18px;
-  line-height: 24px;
-
 }
 
-.container > article:first-child {
+.banner_box_top > article:first-child {
   float: left;
   background-image: url("../img/raspberry.png") ;
   background-repeat: no-repeat;
@@ -517,7 +520,7 @@ header p span{
 
 }
 
-.container > article:nth-child(2){
+.banner_box_top > article:nth-child(2){
   background: url("../img/chocolate.png");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -679,37 +682,24 @@ header p span{
   float: right;
 }
 
-.banner .banner_left .10_ways {
-  width: 20px;
-  background: white;
+.10_ways {
+  background: url("../img/banner_d_r.jpg") #f8f7f4;
 }
 
-.map_block {
-  position: relative;
+.10_ways h4 {
+  font-size: 16px;
+  line-height: 22px;
 }
 
-.connect_us {
-  position: absolute;
-  color: black;
-  top: 60px;
-  right: 0;
-  width: 300px;
-  min-height: 300px;
-  background-color: #fdfefe;
-  padding: 25px;
-  box-sizing: border-box;
-  border-radius: 15px;
-}
-
-.text_conteiner {
-  width:227px;
+.10_ways p {
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .delivery {
   float: left;
   padding: 25px;
-  background:url("../img/banner_back.png") #f8f7f4;
-
+  background: url("../img/banner_d_r.png") #f8f7f4;
   color: #8e8e8d;
 }
 
@@ -730,16 +720,6 @@ header p span{
   padding-left: 18px;
   border: none;
   left: 10px;
-}
-
-.10_ways h4 {
-  font-size: 16px;
-  line-height: 22px;
-}
-
-.10_ways p {
-  font-size: 24px;
-  line-height: 30px;
 }
 
 .connect_us a{
@@ -773,6 +753,26 @@ header p span{
   min-width: 900px;
   max-width: 1200px;
   margin: 0 -20px;
+}
+.map_block {
+  position: relative;
+}
+
+.connect_us {
+  position: absolute;
+  color: black;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  min-height: 300px;
+  background-color: #fdfefe;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.text_conteiner {
+  width:227px;
 }
 
 .feedback {
@@ -946,6 +946,10 @@ footer {
   margin-right: 30px;
 }
 
+.center_footer a:nth-of-type(3){
+  margin-right: 33px;
+}
+
 .center_footer a:first-of-type {
   font-weight: bold;
 }
@@ -1029,6 +1033,11 @@ footer {
   text-align: center;
   width: 200px;
   min-height: 135px;
+  z-index: 0;
+}
+
+.choose_item article:hover {
+  z-index: 2;
 }
 
 .choose_item article:nth-of-type(4n) {
