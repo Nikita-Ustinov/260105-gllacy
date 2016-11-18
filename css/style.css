@@ -6,7 +6,59 @@ body {
   color: #ffffff;
   padding: 0;
   margin: 0;
-  background: #a4c3b2;
+}
+
+body > input[type="radio"] {
+  display: none;
+}
+
+.site_wrapper {
+  min-width: 900px;
+  background-color: #a4c3b2;
+  background-image: url("../img/double_ice-cream.png");
+  background-repeat: no-repeat;
+  background-position: top  center;
+}
+
+.content_wrapper {
+  margin: 0 auto;
+  widht: 900px;
+}
+
+.slider {
+  position: relative;
+  text-align: center;
+}
+
+.slide {
+  display: none;
+}
+
+#btn_1:checked ~ .site_wrapper #slide_1,
+#btn_2:checked ~ .site_wrapper #slide_2,
+#btn_3:checked ~ .site_wrapper #slide_3 {
+  display: block;
+}
+
+#btn_1:checked ~ .site_wrapper label[for="btn_1"],
+#btn_2:checked ~ .site_wrapper label[for="btn_2"],
+#btn_3:checked ~ .site_wrapper label[for="btn_3"] {
+  background-color: white;
+}
+
+#btn_1:checked ~ .site_wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/double_ice-cream.png");
+}
+
+#btn_2:checked ~ .site_wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/double_ice-cream_2.png");
+}
+
+#btn_3:checked ~ .site_wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/double_ice-cream_3.png");
 }
 
 .clearfix::after {
@@ -17,6 +69,10 @@ body {
 
 .hidden {
   display: none;
+}
+
+.not_hidden {
+  display: block;
 }
 
 .active {
@@ -240,7 +296,7 @@ header {
   border: 0;
   padding: 0;
   position: relative;
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 .search_btn:hover {
@@ -368,7 +424,6 @@ header {
 }
 
 .hidden_enter_form input:focus .password_box::before, .hidden_enter_form input:focus .mail_box::before {
-  /*review ---почему не появляется при нажатии?*/
   display: inline;
 }
 
@@ -452,7 +507,6 @@ header p span{
   content: "";
   width: 100%;
   height: 900px;
-  /*border-radius: 60%;*/
   top: -427px;
   left: 0;
   z-index: -1;
@@ -491,14 +545,16 @@ header p span{
   line-height: 44px;
 }
 
-.background_slider {
+.list_slider {
+  position: absolute;
+  top: 185px;
   margin: 0;
   padding: 0;
   display: block;
   float: left;
 }
 
-.background_slider li {
+.list_slider label {
   display: inline-block;
   margin-right: 6px;
   width: 20px;
@@ -506,6 +562,7 @@ header p span{
   border-radius: 50%;
   border: 2px solid white;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .background_slider li:hover {
@@ -524,7 +581,7 @@ header p span{
 .banner {
   width: 48.85%;
   border-radius: 15px;
-  min-height: 230px;
+  min-height: 220px;
   margin-bottom: 25px;
   padding: 20px;
   box-sizing: border-box;
@@ -735,9 +792,13 @@ header p span{
 .advantage_4 {
   float: right;
 }
-
+/*#f8f7f4 */
 .ten_ways {
-  background: #f8f7f4 url("../img/banner_d_l.jpg") ;
+  background-color: black;
+  background-image:  url("../img/banner_d_l.jpg") ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /*background-size: 100%;*/
   color: #5a5a5a;
 }
 
@@ -751,10 +812,17 @@ header p span{
   line-height: 30px;
 }
 
+.delivery_out {
+  background: url("../img/banner_d_r.jpg") no-repeat center center;
+  width: 48.85% ;
+  border-radius: 15px;
+  padding: 7px;
+}
+
 .delivery {
-  float: left;
-  padding: 25px;
-  background: url("../img/banner_d_r.png") #f8f7f4;
+  border-radius: 15px;
+  padding: 20px;
+  background: #f8f7f4 ;
   color: #8e8e8d;
 }
 
@@ -844,13 +912,71 @@ header p span{
 }
 
 .heeden_feedback {
-  display:none;
+  /*display: block;*/
+  position: absolute;
+  top: 338px;
+  left: 32.5%;
   width: 477px;
   height: 442px;
   background-color: #f8f7f4;
   border-radius: 7px;
   padding: 18px 25px;
   box-sizing: border-box;
+  z-index: 50;
+}
+
+.over_lay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: black;
+ opacity: 0.5;
+}
+
+.close_form {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: none;
+  box-shadow: none;
+  right: 15px;
+  top: 15px;
+  border: none;
+  z-index: 50;
+}
+
+.close_form::before {
+  position: absolute;
+  background: black;
+  display: block;
+  content: "";
+  width: 19px;
+  height: 3px;
+  top: 6px;
+  left: -1px;
+  transform: rotate(45deg);
+}
+
+.close_form::after {
+  top: 6px;
+  left: -1px;
+  transform: rotate(-45deg);
+  position: absolute;
+  background: black;
+  display: block;
+  content: "";
+  width: 19px;
+  height: 3px;
+}
+
+.heeden_feedback::before {
+  position: absolute;
+  width: 500px;
+  height: 1000px;
+  background-color: black;
+  opacity: 0;
 }
 
 .heeden_feedback h3 {
@@ -858,15 +984,17 @@ header p span{
   font-size: 24px;
   line-height: 28px;
   margin: 0 0 23px;
+  box-sizing: border-box;
 }
 
 .heeden_feedback input {
   width: 268px;
   height: 44px;
   border-radius: 7px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   padding-left: 14px;
   box-sizing: border-box;
+  padding-top: 0;
   outline: none;
 }
 
@@ -877,6 +1005,7 @@ header p span{
   height: 155px;
   box-sizing: border-box;
   margin-bottom: 25px;
+  border: 1px solid #d3d3d2;
 }
 
 .heeden_feedback .btn {
@@ -916,6 +1045,20 @@ header p span{
   color: #5b9ddf;
 }
 
+.your_name input:hover {
+  border: 2px solid #c7c6c5;
+}
+
+.your_name input {
+  border: 1px solid #d3d3d2;
+}
+
+.your_name input:focus {
+  border: 2px solid #8fbdec;
+  border-radius: 7px;order: 2px solid #c7c6c5;
+  outline: none;
+}
+
 .your_mail {
   position:relative;
   padding-top: 20px;
@@ -925,7 +1068,7 @@ header p span{
 .your_mail::before {
   display: none;
   position: absolute;
-  top: 0;
+  top: 5px;
   position: absolute;
   content: "Ваша почта для ответа?";
   margin-left: 16px;
@@ -934,10 +1077,24 @@ header p span{
   color: #5b9ddf;
 }
 
+.your_mail input {
+  border: 1px solid #d3d3d2;
+}
+
+.your_mail input:hover {
+  border: 2px solid #c7c6c5;
+}
+
+.your_mail input:focus {
+  border: 2px solid #8fbdec;
+  border-radius: 7px;
+  outline: none;
+}
+
 .your_mail input:focus .your_mail::before{
   display: block;
 }
-/*review ----------------------------------почему не появляются при нажатии на область?*/
+
 .your_name input:focus .your_name::before{
   display: block;
 }
@@ -971,7 +1128,7 @@ footer {
   height: 39px;
   box-sizing: border-box;
   margin-right: 10px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .social a:last-of-type {
@@ -990,12 +1147,6 @@ footer {
 }
 
 .vk {
-  background: #c2cec7;
-}
-
-.vk::before {
-  content: "";
-  display: block;
   background:  url("../img/ВК.png") no-repeat;
 }
 
@@ -1060,6 +1211,15 @@ footer {
 }
 /*------------------------------------------------------------------------------------------------------------------*/
 
+.site_wrapper_catalog {
+  min-width: 900px;
+  background-color: #a4c3b2;
+}
+
+.main_menu_1 .menu_sub   a {
+  color: black;
+}
+
  .catalog {
   margin-bottom: 0;
 }
@@ -1078,13 +1238,18 @@ footer {
 }
 
 .sub_menu li {
-  /*wdith: 70px;*/
   box-sizing: border-box;
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .sub_menu a {
   color: inherit;
+}
+
+.sub_menu  a::after {
+  content: "»";
+  margin-left: 7px;
+  text-decoration: none;
 }
 
 .sub_menu li:last-child {
@@ -1117,16 +1282,16 @@ footer {
 .top_filter {
   height: 60px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 4px;
   background-color: rgba(0,200,200,0.3);
 }
 
 .sort {
   width: 195px;
   height: 56px;
-  background-color: rgba(0,200,200,0.4);
+  /*background-color: rgba(0,200,200,0.2);*/
   float: left;
-  margin-right: 14px;
+  margin-right: 2.2%;
 }
 
 .sort label {
@@ -1140,17 +1305,20 @@ footer {
   background-color: #a9b9af;
   color: white;
   border-radius: 20px;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
   padding-left: 15px;
   box-sizing: border-box;
 }
 
 .price {
+  position: relative;
   float: left;
   width: 220px;
   height: 56px;
   background-color: rgba(0,200,200,0.4);
-  margin-right: 10px;
+  margin-right: 2.2%;
   box-sizing: border-box;
 }
 
@@ -1171,11 +1339,40 @@ footer {
   padding-left: 15px;
 }
 
+.line_range {
+  height: 3px;
+  width: 188px;
+  background: #d1dad3;
+  position: absolute;
+  top: 33px;
+  left: 15px;
+}
+
+.ball_1 {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 35px;
+}
+
+.ball_2 {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 133px;
+}
+
 .fat_choose {
   width: 420px;
   height: 56px;
   background-color: rgba(0,200,200,0.4);
-  float: right;
+  float: left;
 }
 
 .for_fat_choose {
@@ -1192,18 +1389,72 @@ footer {
   padding-left: 15px;
   box-sizing: border-box;
   padding-top: 7px;
+
+}
+
+.fat_radio_box input {
+  display: none;
+}
+
+.fat_radio_box label {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.fat_radio_box span {
+  line-height: 18px;
+  padding-left: 15px;
+  font-weight: normal;
+  margin-right: 17px;
+  vertical-align: middle;
+  /*review не применяется этот стиль к подписям радиокнопки выбора жирности?*/
+}
+
+/*review эти стили почему то не применяются)*/
+#zero:checked ~ .fat_radio_box label[for="zero"],
+#ten:checked ~ .fat_radio_box label[for="ten"],
+#thirty:checked ~ .fat_radio_box label[for="thirty"],
+#thirty_up:checked ~ .fat_radio_box label[for="thirty_up"] {
+  background-color: white;
+}
+
+.for_inner {
+    float: left;
+    margin-left: 17px;
+    margin-bottom: 10px;
+}
+
+.filter_btn {
+  width: 145px;
+  height: 36px;
+  border-radius: 15px;
+  border: none;
+  background-color: #a7b8ae;
+  color: white;
+  border: 2px solid white;
+  float: right;
 }
 
 .inner {
+  /*как заставить этот чекбокс подлезть под надпись?*/
+  float: left;
   width: 702px;
   height: 36px;
   background-color: #a9b9af;
   color: white;
   border-radius: 20px;
-  font-weight: bold;
   padding-left: 15px;
   box-sizing: border-box;
   padding-top: 7px;
+  line-height: 18px;
+  padding-left: 15px;
+  font-weight: normal;
 }
 
 .choose_item article {
@@ -1245,27 +1496,33 @@ footer {
   box-sizing: border-box;
 }
 
+.page_nav li:nth-of-type(1) {
+  position: relative;
+  top: 7px;
+  background: url("../img/left_mark.png") no-repeat center center ;
+}
+
+.page_nav li:nth-of-type(7) {
+  position: relative;
+  top: 7px;
+  background: url("../img/right_mark.png") no-repeat center center ;
+}
+
 .page_nav li:nth-of-type(2) {
   background: white;
   color: black;
 
 }
 
-.page_nav li:hover {
+.page_nav li:nth-of-type(2n):hover {
   background: rgba(255,255,255, 0.3);
+  /*review как сделать, чтобы этот селектор выбирал элементы с 2го и по 6ой ?*/
 }
 
 .page_nav li:nth-of-type(2):hover {
   background: white;
 }
 
-.page_nav li:nth-of-type(1) {
-  color: #9db1a5;
-}
-
-.page_nav li:nth-of-type(1):hover {
-  background: none;
-}
 .page_nav a {
   color: inherit;
   text-decoration: none;
