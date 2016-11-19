@@ -119,6 +119,7 @@ body > input[type="radio"] {
   margin: 0 auto;
   padding: 0 2.3%;
   /*box-sizing: border-box;*/
+  position: relative;
 }
 
 header {
@@ -330,10 +331,19 @@ header {
   display: inline-block;
   height: 32px;
   box-sizing: border-box;
-  padding: 5px 35px 5px 15px;
+  padding: 7px 35px 5px 15px;
   vertical-align: top;
   background: rgba(157,177,165, 0.2);
   border-radius: 20px;
+}
+
+.right_side .basket {
+  padding-top: 5px;
+}
+
+.basket img {
+    position: relative;
+    top: 2px;
 }
 
 .right_side .enter {
@@ -1235,9 +1245,199 @@ footer {
   min-width: 900px;
   /*max-width: 1200px;
   padding: 0 2.3%;*/
-  background-color: #a4c3b2;
+  background-color: #a9bbb1;
 }
 
+.main_container_catalog {
+  background: url("../img/lightning.png") no-repeat ;
+}
+
+.right_side .basket_catalog {
+  background-color: #f7f6f3;
+  color: black;
+  width: 117px;
+  font-size: 14px;
+  line-height: 16px;
+  padding-right: 0;
+  font-weight: normal;
+}
+
+.basket_catalog_hidden {
+  display: none;
+  width: 540px;
+  height: 240px;
+  background-color: #f8f7f4;
+  color: black;
+  position: absolute;
+  top: 60px;
+  left: 393px;
+  border-radius: 5px;
+  z-index: 100;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: normal;
+}
+
+.basket_catalog::after {
+  content: "";
+  display: none;
+  position: absolute;
+  width: 117px;
+  height: 50px;
+  right: 30px;
+  top: 50px;
+  z-index: 101;
+}
+
+.basket_catalog:hover::after{
+  display: block;
+}
+
+.basket_catalog:hover +.basket_catalog_hidden {
+  display: block;
+}
+
+.basket_catalog_hidden:hover {
+  display: block;
+}
+
+.top_basket_hidden {
+  height: 125px;
+  width: 516px;
+  border-bottom: 1px solid #cacac7;
+  margin-bottom: 16px;
+}
+
+.top_basket_hidden div {
+  display: inline-block;
+}
+
+.buy_1 {
+  min-height: 56px;
+  width: 516px;
+  padding: 14px 20px 0 6px;
+}
+
+.buy_2 {
+  min-height: 56px;
+  width: 516px;
+  padding: 0 20px 0 6px;
+}
+
+.close_buy {
+  position: relative;
+  float: left;
+  width: 10px;
+  height: 10px;
+  background: none;
+  box-shadow: none;
+  left: 0;
+  top: 10px;
+  border: none;
+  z-index: 50;
+  margin-right: 13px;
+}
+
+.close_buy::before {
+  position: absolute;
+  background: black;
+  display: block;
+  content: "";
+  width: 14px;
+  height: 2px;
+  top: 8px;
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.close_buy::after {
+  top: 8px;
+  left: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  background: black;
+  display: block;
+  content: "";
+  width: 14px;
+  height: 2px;
+}
+
+.about_buy {
+  padding-left: 46px;
+  width: 275px;
+  margin-right: 24px;
+  padding-top: 11px;
+  font-weight: normal;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.about_buy::before {
+  content:"";
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: 0;
+  top: 0;
+  background: url("../img/small_ice-cream_1.png") no-repeat center center;
+}
+
+.price_buy {
+  width: 95px;
+  margin-right: 25px;
+  vertical-align: middle;
+}
+
+.buy_2 .price_buy {
+  position:relative;
+  top: -17px;
+}
+
+.buy_2 .finish_price {
+  position:relative;
+  top: -17px;
+}
+
+.buy_2 .about_buy::before {
+  background: url("../img/small_ice-cream_2.png") no-repeat center center;
+}
+
+.price_buy span {
+  color: #a6a6a5;
+}
+
+.bottom_basket_hidden{
+  padding: 12px;
+  padding-top: 0;
+}
+
+.bottom_basket_hidden span {
+  font-size: 15px;
+  line-height: 18px;
+  display: block;
+  font-weight: bold;
+  position: relative;
+  left: 399px;
+  margin-bottom: 15px;
+}
+
+.bottom_basket_hidden a {
+  font-size: 18px;
+  display: block;
+  height: 45px;
+  width: 172px;
+  box-sizing: border-box;
+  line-height: 24px;
+  margin-right: -15px;
+  background:#e95139;
+  color: white;
+  padding-left: 15px;
+  padding-right: 0;
+  padding-top: 11px;
+  font-weight: bold;
+}
 .main_menu_1 .menu_sub   a {
   color: black;
 }
@@ -1469,11 +1669,7 @@ footer {
   /*review не применяется этот стиль к подписям радиокнопки выбора жирности?*/
 }
 
-/*review эти стили почему то не применяются)*/
-#zero:checked ~ .fat_radio_box label::before[for="zero"],
-#ten:checked ~ .fat_radio_box label::before[for="ten"],
-#thirty:checked ~ .fat_radio_box label::before[for="thirty"],
-#thirty_up:checked ~ .fat_radio_box label[for="thirty_up"]::before {
+input:checked + label::before {
   background-color: white;
 }
 
@@ -1529,12 +1725,8 @@ footer {
   vertical-align: medium;
 }
 
-#ch_1:checked ~ .inner label::before[for="ch_1"],
-#ch_2:checked ~ .inner label::before[for="ch_2"],
-#ch_3:checked ~ .inner label::before:[for="ch_3"],
-#ch_4:checked ~ .inner label[for="ch_4"]::before ,
-#ch_5:checked ~ .inner label[for="ch_5"]::before{
-  background: url("../img/checkbox_on.png") no-repeat center center;
+input:checked + .for_checkbox::before {
+  background: url("../img/checkbox_on .png") no-repeat center center;
 }
 
 .choose_item article {

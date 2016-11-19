@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="site_wrapper_catalog">
-        <div class="main_container">
+        <div class="main_container main_container_catalog">
           <header class="clearfix catalog">
             <div class="header_hight">
               <img src="img/Logo.png" class="logo" alt="logo" width="157" height="69">
@@ -34,10 +34,42 @@
                   <input class="hidden_search" type="search" placeholder="Что ищем?">
                 </div>
                 </div>
-                <a href="#" class="basket">
-                  <img src="img/trolley.png"  class="img_basket" alt="->" width="18" height="16">
-                  Пусто
+                <a href="#" class="basket basket_catalog">
+                  <img src="img/red_trolley.png"  class="img_basket" alt="->" width="18" height="16">
+                  2 товара
                 </a>
+                <div class="basket_catalog_hidden">
+                  <div class="top_basket_hidden">
+                    <div class="buy_1">
+                      <button type="button" class="close_buy"></button>
+                      <div class="about_buy">
+                        Пломбир с аппельсиновым джемом
+                      </div>
+                      <div class="price_buy">
+                        1,5 кг х <span calss="little_hidden">200 руб.</span>
+                      </div>
+                      <div class="finish_price">
+                        300 руб.
+                      </div>
+                    </div>
+                    <div class="buy_2">
+                      <button type="button" class="close_buy"></button>
+                      <div class="about_buy">
+                        Клубничный пломбир с присыпкой из белого шоколада
+                      </div>
+                      <div class="price_buy">
+                        1,5 кг х <span>300 руб.</span>
+                      </div>
+                      <div class="finish_price">
+                        450 руб.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bottom_basket_hidden ">
+                    <span>Итого: 750руб.</span>
+                    <a href="#" class="btn">Оформить заказ</a>
+                  </div>
+                </div>
                 <a href="#" class="enter">
                   Выход
                 </a>
@@ -102,11 +134,11 @@
                 <div class="low_filter clearfix">
                   <span class="for_inner">Наполнители</span>
                   <div class="inner">
-                    <input type="checkbox" id="ch_1"><label for="ch_1">шоколадные</label>
-                    <input type="checkbox" id="ch_2"><label for="ch_2">сахарные присыпки</label>
-                    <input type="checkbox" id="ch_3"><label for="ch_3">фрукты</label>
-                    <input type="checkbox" id="ch_4"><label for="ch_4">сиропы</label>
-                    <input type="checkbox" id="ch_5"><label for="ch_5">джемы</label>
+                    <input type="checkbox" id="ch_1"><label class="for_checkbox" for="ch_1">шоколадные</label>
+                    <input type="checkbox" id="ch_2"><label class="for_checkbox" for="ch_2">сахарные присыпки</label>
+                    <input type="checkbox" id="ch_3"><label class="for_checkbox" for="ch_3">фрукты</label>
+                    <input type="checkbox" id="ch_4"><label class="for_checkbox" for="ch_4">сиропы</label>
+                    <input type="checkbox" id="ch_5"><label class="for_checkbox" for="ch_5">джемы</label>
                   </div>
                   <button class="filter_btn" type="submit">Показать</button>
                 </div>
