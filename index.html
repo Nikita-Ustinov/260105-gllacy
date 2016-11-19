@@ -209,10 +209,12 @@
               <button class="close_form"></button>
               <h3>Мы обязательно вам ответим!</h3>
               <div class="your_name">
-              <input type="text" name="name" placeholder="Как вас зовут?">
+                <input id="your_name_input" type="text" name="name" placeholder="Как вас зовут?">
+                <label for="your_name_input">Как вас зовут?</label>
               </div>
               <div class="your_mail">
-              <input type="email" name="mail" placeholder="Ваша почта для ответа?">
+                <input type="email" name="mail" placeholder="Ваша почта для ответа?">
+                <label class="hidden">Ваша почта для ответа?</label>
               </div>
               <textarea rows="10" placeholder="Напишите что-нибудь..."></textarea>
               <button type="submit" value="send" class="btn">Отправить</button>

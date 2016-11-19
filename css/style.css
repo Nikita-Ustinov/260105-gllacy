@@ -18,6 +18,7 @@ body > input[type="radio"] {
   background-image: url("../img/double_ice-cream.png");
   background-repeat: no-repeat;
   background-position: top  center;
+
 }
 
 .content_wrapper {
@@ -114,6 +115,7 @@ body > input[type="radio"] {
 
 .main_container {
   width: 900px;
+  /*max-width: 1200px;*/
   margin: 0 auto;
   padding: 0 2.3%;
   /*box-sizing: border-box;*/
@@ -792,13 +794,12 @@ header p span{
 .advantage_4 {
   float: right;
 }
-/*#f8f7f4 */
+
 .ten_ways {
   background-color: black;
   background-image:  url("../img/banner_d_l.jpg") ;
   background-position: center center;
   background-repeat: no-repeat;
-  /*background-size: 100%;*/
   color: #5a5a5a;
 }
 
@@ -1033,16 +1034,36 @@ header p span{
   position: relative;
 }
 
-.your_name::before {
+.your_name label {
   display: none;
   position: absolute;
   top: -14px;
   position: absolute;
-  content: "Как вас зовут?";
   margin-left: 16px;
   font-size: 11px;
   line-height: 13px;
   color: #5b9ddf;
+}
+
+.your_name input:focus + label {
+  display: block;
+}
+
+.your_mail input:focus + label {
+  display: block;
+}
+
+.heeden_feedback input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: transparent;
+}
+.heeden_feedback input:focus::-moz-placeholder { /* Firefox 19+ */
+  color: transparent;
+}
+.heeden_feedback input:focus:-ms-input-placeholder { /* IE 10+ */
+  color: transparent;
+}
+.heeden_feedback input:focus:-moz-placeholder { /* Firefox 18- */
+  color: transparent;
 }
 
 .your_name input:hover {
@@ -1065,12 +1086,11 @@ header p span{
   margin-bottom: 20px;
 }
 
-.your_mail::before {
-  display: none;
+.your_mail label {
+  /*display: none;*/
   position: absolute;
   top: 5px;
   position: absolute;
-  content: "Ваша почта для ответа?";
   margin-left: 16px;
   font-size: 11px;
   line-height: 13px;
@@ -1213,6 +1233,8 @@ footer {
 
 .site_wrapper_catalog {
   min-width: 900px;
+  /*max-width: 1200px;
+  padding: 0 2.3%;*/
   background-color: #a4c3b2;
 }
 
@@ -1250,6 +1272,7 @@ footer {
   content: "»";
   margin-left: 7px;
   text-decoration: none;
+/*review почему то text-decoration не срабатывает у этого элемента*/
 }
 
 .sub_menu li:last-child {
@@ -1269,11 +1292,12 @@ footer {
 
 .filter {
   height: 133px;
+  /*width: 860px;*/
   font-size: 14px;
   line-height: 16px;
   display: block;
   margin-bottom: 39px;
-  background-color: rgba(0,200,0,0.3);
+  /*background-color: rgba(0,200,0,0.3);*/
   font-size: 14px;
   line-height: 16px;
   font-weight: normal;
@@ -1282,8 +1306,8 @@ footer {
 .top_filter {
   height: 60px;
   width: 100%;
-  margin-bottom: 4px;
-  background-color: rgba(0,200,200,0.3);
+  margin-bottom: 15px;
+  /*background-color: rgba(0,200,200,0.3);*/
 }
 
 .sort {
@@ -1297,9 +1321,11 @@ footer {
 .sort label {
   margin-left: 17px;
   margin-bottom: 7px;
+  display: inline-block;
 }
 
 .sort select {
+  position: relative;
   width: 100%;
   height: 36px;
   background-color: #a9b9af;
@@ -1310,6 +1336,20 @@ footer {
   line-height: 18px;
   padding-left: 15px;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  appearance: none;
+}
+
+.sort select::after {
+  /*review почему элемент не отображается на странице?*/
+  content: "";
+  position: absolute;
+  z-index: 100;
+  right: 13px;
+  width:9px;
+  height: 9px;
+  background: black url("../img/marker.png") no-repeat center center;
 }
 
 .price {
@@ -1317,7 +1357,7 @@ footer {
   float: left;
   width: 220px;
   height: 56px;
-  background-color: rgba(0,200,200,0.4);
+  /*background-color: rgba(0,200,200,0.4);*/
   margin-right: 2.2%;
   box-sizing: border-box;
 }
@@ -1325,6 +1365,7 @@ footer {
 .price span {
   margin-left: 16px;
   margin-bottom: 7px;
+  display: inline-block;
   color: white;
 }
 
@@ -1339,13 +1380,22 @@ footer {
   padding-left: 15px;
 }
 
-.line_range {
+.line_range_1 {
   height: 3px;
   width: 188px;
   background: #d1dad3;
   position: absolute;
-  top: 33px;
+  top: 39px;
   left: 15px;
+}
+
+.line_range_2 {
+  height: 3px;
+  width: 97px;
+  background: white;
+  position: absolute;
+  top: 39px;
+  left: 35px;
 }
 
 .ball_1 {
@@ -1354,7 +1404,7 @@ footer {
   background: white;
   border-radius: 50%;
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 35px;
 }
 
@@ -1364,19 +1414,21 @@ footer {
   background: white;
   border-radius: 50%;
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 133px;
 }
 
 .fat_choose {
-  width: 420px;
+  width: 416px;
   height: 56px;
-  background-color: rgba(0,200,200,0.4);
+  /*background-color: rgba(0,200,200,0.4);*/
   float: left;
 }
 
 .for_fat_choose {
   margin-left: 15px;
+  display: inline-block;
+  margin-bottom: 7px;
 }
 
 .fat_radio_box {
@@ -1396,7 +1448,8 @@ footer {
   display: none;
 }
 
-.fat_radio_box label {
+.fat_radio_box label::before {
+  content: "";
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -1407,7 +1460,7 @@ footer {
   padding: 4px;
 }
 
-.fat_radio_box span {
+.fat_radio_box label {
   line-height: 18px;
   padding-left: 15px;
   font-weight: normal;
@@ -1417,17 +1470,17 @@ footer {
 }
 
 /*review эти стили почему то не применяются)*/
-#zero:checked ~ .fat_radio_box label[for="zero"],
-#ten:checked ~ .fat_radio_box label[for="ten"],
-#thirty:checked ~ .fat_radio_box label[for="thirty"],
-#thirty_up:checked ~ .fat_radio_box label[for="thirty_up"] {
+#zero:checked ~ .fat_radio_box label::before[for="zero"],
+#ten:checked ~ .fat_radio_box label::before[for="ten"],
+#thirty:checked ~ .fat_radio_box label::before[for="thirty"],
+#thirty_up:checked ~ .fat_radio_box label[for="thirty_up"]::before {
   background-color: white;
 }
 
 .for_inner {
-    float: left;
+    display: block;
     margin-left: 17px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .filter_btn {
@@ -1438,11 +1491,10 @@ footer {
   background-color: #a7b8ae;
   color: white;
   border: 2px solid white;
-  float: right;
+  float: left;
 }
 
 .inner {
-  /*как заставить этот чекбокс подлезть под надпись?*/
   float: left;
   width: 702px;
   height: 36px;
@@ -1452,9 +1504,37 @@ footer {
   padding-left: 15px;
   box-sizing: border-box;
   padding-top: 7px;
+  font-weight: 16px;
   line-height: 18px;
   padding-left: 15px;
   font-weight: normal;
+  margin-right: 2.2%;
+}
+
+.inner input {
+  display: none;
+}
+
+.inner label::before {
+  display: inline-block;
+  content: "";
+  height: 20px;
+  width: 20px;
+  margin-right: 12px;
+  background: url("../img/checkbox_off.png") no-repeat center center;
+}
+
+.inner label {
+  margin-right: 20px;
+  vertical-align: medium;
+}
+
+#ch_1:checked ~ .inner label::before[for="ch_1"],
+#ch_2:checked ~ .inner label::before[for="ch_2"],
+#ch_3:checked ~ .inner label::before:[for="ch_3"],
+#ch_4:checked ~ .inner label[for="ch_4"]::before ,
+#ch_5:checked ~ .inner label[for="ch_5"]::before{
+  background: url("../img/checkbox_on.png") no-repeat center center;
 }
 
 .choose_item article {
@@ -1514,9 +1594,12 @@ footer {
 
 }
 
-.page_nav li:nth-of-type(2n):hover {
+.page_nav li:not(:last-of-type):hover  {
   background: rgba(255,255,255, 0.3);
-  /*review как сделать, чтобы этот селектор выбирал элементы с 2го и по 6ой ?*/
+}
+
+.page_nav li:first-of-type:hover {
+  background: url("../img/left_mark.png") no-repeat center center ;
 }
 
 .page_nav li:nth-of-type(2):hover {
